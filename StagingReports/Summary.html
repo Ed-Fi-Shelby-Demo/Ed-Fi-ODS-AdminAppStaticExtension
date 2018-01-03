@@ -54,7 +54,7 @@
     <div class="container body-content">
         <div class="row">
             <div class="col-md-12 text-right nav-links">
-                <a href="/">
+                <a href="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net">
                     <span class="fa fa-home"></span><strong>Home</strong>
                 </a>
                 <a href="https://techdocs.ed-fi.org/x/3otwAQ" target="_blank">
@@ -119,7 +119,29 @@
 <li><a href="/StudentsByProgram/255901">Students By Program</a></li>
 <li><a href="/StagingReports/OtherStudentData/255901">Other Student Data</a></li></ul>
 
-<div data-source-url="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/Reports/DistrictSummaryData/255901?environment=Staging" style="min-height: 750px" class="load-action-async"><div><h6>Generating Summary Report</h6></div><div><i class="fa fa-spinner fa-pulse fa-fw"></i></div></div>
+<div data-source-url="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/Reports/DistrictSummaryData/255901?environment=Staging" style="min-height: 750px" class="load-action-async">
+<div class="panel-section">
+    <div class="row heading">
+        <div class="col-xs-10">
+            <h8>Enrollment</h8>
+        </div>
+        <div class="col-xs-2 text-right">
+            <span class="custom-divider"> |</span>
+            <a href="javascript:void(0)" data-toggle="collapse" data-target="#enrollment-panel"><span class="fa fa-chevron-up caret-custom panel-toggle"></span></a>
+        </div>
+    </div>
+    <div id="enrollment-panel" class="row content collapse in">
+        <table class="table table-condensed table-left-border">
+            <tbody>
+                <tr>
+                    <th>Total Enrollment</th>
+                    <td>960</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
             </div>
         </div>
     </div>
