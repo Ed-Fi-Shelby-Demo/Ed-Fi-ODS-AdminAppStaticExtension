@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staging Reports - Ed-Fi ODS Admin App</title>
+    <link href="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/Content/css/styles?v=RAXLQ1rnoFF9aAvXGpZVhiErmdQiFOBMQH3Ew7ZpltM1" rel="stylesheet"/>
+
+    <script src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    <script src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/bundles/jquery?v=yuMp_AiknJx1CClwZg1H_FF6IUxqQeDHAjt3qZKPvCs1"></script>
+
+    <script src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/bundles/toastr?v=oVfCVZ6uJxPLkARTiSI5RPYtjZ2d_J5o86fVolek91U1"></script>
+
+    <script src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/bundles/bootstrap?v=yfcHbKeeg-qR1jgryVkQP3a6YqI-4pZ0z9YZd3gHi4M1"></script>
+
+    <script src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/bundles/scripts/lodash?v=iHDvbpemVAo8MUicBLU0Zvkph9Bon2lsORjRkjGUftI1"></script>
+
+    <script src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/bundles/scripts/site?v=yzWPc4rab1Lgu_96NdeUdRCnh34g0NdD7zQnSAwRqds1"></script>
+
+    <script src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/bundles/scripts/clipboard?v=LcpXyZC2g9dh8782blaL05BlqFUlwCWhlJbTMSntOOs1"></script>
+
+</head>
+<body>
+    <div id="dynamic-modal-container"></div>
+    <script language="javascript">
+        toastr.options.positionClass = "toast-bottom-right";
+		$.ajaxSetup({
+            xhrFields: {
+                withCredentials: true
+            },
+        });
+    </script>
+    <nav class="navbar navbar-inverse navbar-custom" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand brand" href="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net"> <img src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/Content/images/logo-edfi@2x.png" width="132" height="70" alt=""/> </a>
+                <span class="topbar_headline"> Ed-Fi ODS Admin App </span>
+            </div>
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <div class="btn-group">
+                        
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" id="fat-menu">
+            <a data-toggle="dropdown" class="dropdown-toggle" role="button" id="drop3" href="#">ncheng@updconsulting.com <b class="caret"></b></a>
+            <ul aria-labelledby="drop3" role="menu" class="dropdown-menu">
+                <li role="presentation"><a href="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/Account/SignOut" tabindex="-1" role="menuitem">Sign Out</a></li>
+            </ul>
+        </li>
+    </ul>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12 text-right nav-links">
+                <a href="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net">
+                    <span class="fa fa-home"></span><strong>Home</strong>
+                </a>
+                <a href="https://techdocs.ed-fi.org/x/3otwAQ" target="_blank">
+                    <span class="fa fa-question-circle-o"></span><strong>Help</strong>
+                </a>
+            </div>
+        </div>
+        <section>
+            
+
+<div class="row">
+    <div class="col-lg-4">
+        <h5>
+            <img src="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/Content/images/reports_2@2x.png"  height="30" alt="Reports" />
+            <span class="padding-left">Reports</span>
+        </h5>
+    </div>
+</div>
+<div class="row">
+    <ul class="nav nav-tabs"><li><a href="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/ProductionReports/SelectDistrict">Production</a></li><li class="active"><a href="#">Staging</a></li></ul>
+</div>
+<div class="row">
+    <div class="col-xs-12 margin-top-10">
+        <div class="alert alert-info">
+            <strong>Note: </strong>These reports allow for basic data quality inspection and system activity monitoring. They are not intended to support day-to-day analytics needs.
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="tab-content">
+            <div class="tab-pane active">
+                
+
+
+<div class="row">
+        <div class="col-md-12 padding-top">
+            <div id="select-district-report" class="form-horizontal"><div class="row form-group"><div class="col-xs-4 text-right"><strong class="control-label">Select District:</strong></div><div class="col-xs-6 text-left"><select type="text" name="LocalEducationAgencyId" id="LocalEducationAgencyId" class="form-control"><option value=""></option><option value="255901" selected="selected">Grand Bend ISD</option></select></div><span class="text-left help-form col-xs-2"><span></span></span></div></div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    $("#select-district-report").find("select").change(function () {
+        var leaId = $(this).val();
+
+        if (StringIsNullOrWhitespace(leaId)) {
+            return;
+        }
+
+        var url = "/StagingReports/Activity.html";
+        window.location = url;
+    });
+</script>
+
+<ul class="nav nav-pills nav-pills-custom">
+<li><a href="/StagingReports/Summary.html">Summary</a></li>
+<li class="active"><a href="#">Activity</a></li>
+<li><a href="/StagingReports/Demographics.html">Demographics</a></li>
+<li><a href="/StagingReports/SanityChecks.html">Sanity Checks</a></li>
+<li><a href="/StagingReports/VendorValidation.html">Vendor Validation</a></li>
+<li><a href="/StudentsByProgram.html">Students By Program</a></li>
+<li><a href="/StagingReports/OtherStudentData.html">Other Student Data</a></li></ul>
+</ul>
+
+<div class="row padding-bottom-5">
+    <div class="col-lg-12">
+        <h3>Load Activity by Metric</h3>
+    </div>
+</div>
+
+<div class="row">
+<form action="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net/Reports/ActivityListByDate" id="activity-report-form" method="post"><input type="text" value="Staging" name="Environment" id="Environment" class="form-control" style="display:none" /><input type="text" value="255901" name="LocalEducationAgencyId" id="LocalEducationAgencyId" class="form-control" style="display:none" />            <div class="col-md-12">
+                <span class="radio-inline-container"><input type="radio" value="1" name="SelectedDate" id="50fa8189-61ab-444b-bc06-90ae53cbd284" class="form-control radio-inline" /><label for="50fa8189-61ab-444b-bc06-90ae53cbd284" class="radio-inline-label">Show all activity</label></span>
+            </div>
+            <div class="col-md-12">
+                <span class="radio-inline-container"><input type="radio" value="2" name="SelectedDate" id="1e86e7e2-99bf-456f-ae55-027c474917b7" class="form-control radio-inline" /><label for="1e86e7e2-99bf-456f-ae55-027c474917b7" class="radio-inline-label">Show activity in the last 24 hours</label></span>
+            </div>
+            <div class="col-md-12">
+                <span class="radio-inline-container"><input type="radio" value="3" name="SelectedDate" id="434d973f-7e21-4192-a75e-2deed905055e" class="form-control radio-inline" /><label for="434d973f-7e21-4192-a75e-2deed905055e" class="radio-inline-label">Show activity in the last week</label></span>
+            </div>
+        <div class="col-md-12 padding-top">
+            <button type="submit" data-update-target-id="activity-report" disabled="True" data-spinner-id="loading-activity-report-spinner" class="btn btn-primary cta">Generate Report</button><i id="loading-activity-report-spinner" class="fa fa-spinner fa-pulse fa-fw inline-icon invisible"></i>
+        </div>
+</form></div>
+
+<div id="activity-report" class="padding-top">
+
+</div>
+
+<script type="text/javascript">
+    var $form = $("#activity-report-form");
+    $form.find("input[type=radio]").change(function() {
+        $form.find("[type=submit]").attr("disabled", false);
+    });
+</script>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div id="AntiForgeryToken">
+                <input name="__RequestVerificationToken" type="hidden" value="kC6SddjRW75Fa85jJDsN4ciZHGRNeSgHJgZBK5keM2IMIKATyG82imfQIr6awml_Fw7jFJvLIZ_sCpXFiNGupN1li2I1xKfJO0NcVMa5yHzwiUsUA9m9q264uu6NVPH64-Elmi35H_Yp4mRbbJUzAA2" />
+            </div>
+            <div class="hidden">
+                <div id="loading-overlay" class="text-center">
+                    <div><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container container-footer">
+            <p class="text-muted small"><a href="https://edfiodsadminappwebsite-production-6slxxfs2t2ipw.azurewebsites.net"><span class="fa fa-home"></span><span>Home</span></a></p>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript">
+        GlobalInitialize();
+    </script>    
+</body>
+</html>
