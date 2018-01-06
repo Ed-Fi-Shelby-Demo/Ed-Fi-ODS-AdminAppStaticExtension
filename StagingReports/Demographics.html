@@ -26,6 +26,11 @@
     <div id="dynamic-modal-container"></div>
     <script language="javascript">
         toastr.options.positionClass = "toast-bottom-right";
+		$.ajaxSetup({
+            xhrFields: {
+                withCredentials: true
+            },
+        });
     </script>
     <nav class="navbar navbar-inverse navbar-custom" role="navigation">
         <div class="container">
